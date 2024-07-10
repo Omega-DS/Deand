@@ -73,7 +73,7 @@ Copper wire
 92
 6
 0
-1	6 1
+1	7 1
 Do not steal it, just make it
 #11
 Drill mk I

@@ -420,7 +420,7 @@ void Display::ShowHelp()
     gotoxy(x + 6, 7);
     cout << "Shift + k, faces opposite direction";
     gotoxy(x + 4, 8);
-    cout << "p: Open inventory";
+    cout << "i: Open inventory";
     gotoxy(x + 4, 9);
     cout << "e: Interactuate with facing block";
     gotoxy(x + 4, 10);

@@ -224,9 +224,12 @@ bool MainLoop(Player player)
             case 'l':
             case 'L':
                 coords = player.GetFacing();
-                map.tiles[coords.x][coords.y]->Power(map, display, player.GetCoords(), coords);
-                map.ResetPowered();
-                display.UpdateMap(map, player.GetCoords());
+                if(map.InMap(coords))
+                {
+                    map.tiles[coords.x][coords.y]->Power(map, display, player.GetCoords(), coords);
+                    map.ResetPowered();
+                    display.UpdateMap(map, player.GetCoords());
+                }
                 break;
         }
     
