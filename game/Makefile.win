@@ -1,0 +1,67 @@
+# Project: Game
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o aux_func/FuncAux.o DisplayClass.o PlayerClass.o MapClass.o InventoryClass.o blocks/BlockClass.o items/ItemClass.o RecipeClass.o blocks/Producer.o DataBaseClass.o blocks/ChestClass.o blocks/BouncerClass.o blocks/PipeClass.o
+LINKOBJ  = main.o aux_func/FuncAux.o DisplayClass.o PlayerClass.o MapClass.o InventoryClass.o blocks/BlockClass.o items/ItemClass.o RecipeClass.o blocks/Producer.o DataBaseClass.o blocks/ChestClass.o blocks/BouncerClass.o blocks/PipeClass.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -Wl,--stack,268435456
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Game.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++14 -Wall -Wextra -Wl,--stack,268435456
+CFLAGS   = $(INCS) -std=gnu++14 -Wall -Wextra -Wl,--stack,268435456
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\DevCpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+aux_func/FuncAux.o: aux_func/FuncAux.cpp
+	$(CPP) -c aux_func/FuncAux.cpp -o aux_func/FuncAux.o $(CXXFLAGS)
+
+DisplayClass.o: DisplayClass.cpp
+	$(CPP) -c DisplayClass.cpp -o DisplayClass.o $(CXXFLAGS)
+
+PlayerClass.o: PlayerClass.cpp
+	$(CPP) -c PlayerClass.cpp -o PlayerClass.o $(CXXFLAGS)
+
+MapClass.o: MapClass.cpp
+	$(CPP) -c MapClass.cpp -o MapClass.o $(CXXFLAGS)
+
+InventoryClass.o: InventoryClass.cpp
+	$(CPP) -c InventoryClass.cpp -o InventoryClass.o $(CXXFLAGS)
+
+blocks/BlockClass.o: blocks/BlockClass.cpp
+	$(CPP) -c blocks/BlockClass.cpp -o blocks/BlockClass.o $(CXXFLAGS)
+
+items/ItemClass.o: items/ItemClass.cpp
+	$(CPP) -c items/ItemClass.cpp -o items/ItemClass.o $(CXXFLAGS)
+
+RecipeClass.o: RecipeClass.cpp
+	$(CPP) -c RecipeClass.cpp -o RecipeClass.o $(CXXFLAGS)
+
+blocks/Producer.o: blocks/Producer.cpp
+	$(CPP) -c blocks/Producer.cpp -o blocks/Producer.o $(CXXFLAGS)
+
+DataBaseClass.o: DataBaseClass.cpp
+	$(CPP) -c DataBaseClass.cpp -o DataBaseClass.o $(CXXFLAGS)
+
+blocks/ChestClass.o: blocks/ChestClass.cpp
+	$(CPP) -c blocks/ChestClass.cpp -o blocks/ChestClass.o $(CXXFLAGS)
+
+blocks/BouncerClass.o: blocks/BouncerClass.cpp
+	$(CPP) -c blocks/BouncerClass.cpp -o blocks/BouncerClass.o $(CXXFLAGS)
+
+blocks/PipeClass.o: blocks/PipeClass.cpp
+	$(CPP) -c blocks/PipeClass.cpp -o blocks/PipeClass.o $(CXXFLAGS)
