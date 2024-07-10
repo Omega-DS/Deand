@@ -394,10 +394,10 @@ bool PauseLoop(Display & display, Map & map, Player & player)
             display.ShowHelp();
             break;
         case 's':
-            SaveGame(map, player);
+            //SaveGame(map, player);
             break;
         case 'l':
-            LoadGame(map, player);
+            //LoadGame(map, player);
             display.UpdateMap(map, player.GetCoords());
             display.UpdateInv(player);
             break;
@@ -418,16 +418,22 @@ void SaveGame(Map & map, Player & player)
         
         for(int i = 0; i < player.inv.GetSize(); i++)
            f.write((char*)&player.inv.cont[i], sizeof(Item));
-           
+           /*
         for (int i = 0; i < map.GetSize(); i++)
             for (int j = 0; j < map.GetSize(); j++)
             {
-                for(int i = 0; i < map.tiles[i][j]->GetInventory().GetSize(); i++)
-                   f.write((char*)&map.tiles[i][j]->GetInventory().cont[i], sizeof(Item));
-                for(int i = 0; i < map.tiles[i][j]->GetCraftingInventory().GetSize(); i++)
-                   f.write((char*)&map.tiles[i][j]->GetCraftingInventory().cont[i], sizeof(Item));
                 f.write((char*)(map.tiles[i][j]), sizeof(*map.tiles[i][j]));
-            }
+                
+                int a = map.tiles[i][j]->GetInventory().GetSize();
+                                
+                f.write((char*)&a, a);
+                for(int k = 0; k < a; k++)
+                    f.write((char*)&map.tiles[i][j]->GetInventory().cont[k], sizeof(Item));
+                a = map.tiles[i][j]->GetCraftingInventory().GetSize();
+                f.write((char*)&a, sizeof(a));
+                for(int k = 0; k < a; k++)
+                    f.write((char*)&map.tiles[i][j]->GetCraftingInventory().cont[k], sizeof(Item));
+            }*/
     }
     
     f.close();
@@ -446,12 +452,30 @@ void LoadGame(Map & map, Player & player)
         
         for(int i = 0; i < player.inv.GetSize(); i++)
            f.read((char*)&player.inv.cont[i], sizeof(Item));
-           
+           /*
         for (int i = 0; i < map.GetSize(); i++)
             for (int j = 0; j < map.GetSize(); j++)
             {
                 f.read((char*)(map.tiles[i][j]), sizeof(*map.tiles[i][j]));
-            }
+                
+                int s;
+                
+                f.read((char*)&s, sizeof(s));
+                Inventory inv(s);
+                
+                for(int k = 0; k < s; k++)
+                    f.read((char*)&inv.cont[k], sizeof(Item));
+                map.tiles[i][j]->SetInventory(inv);
+                
+                
+                f.read((char*)&s, sizeof(s));
+                Inventory inv1(s);
+                
+                for(int k = 0; k < s; k++)
+                    f.read((char*)&inv1.cont[k], sizeof(Item));
+                map.tiles[i][j]->SetCraftingInventory(inv1);
+                
+            }*/
     }
     
     f.close();

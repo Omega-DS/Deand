@@ -360,9 +360,9 @@ void Display::ShowPauseMenu()
     gotoxy(x + 4, 5);
     cout << "h: Help";
     gotoxy(x + 4, 6);
-    cout << "s: Save game";
+    cout << "s: Save game (Upcming...)";
     gotoxy(x + 4, 7);
-    cout << "l: Load game";
+    cout << "l: Load game (Upcoming...)";
     gotoxy(x + 4, 8);
     cout << "p: Exit";
 

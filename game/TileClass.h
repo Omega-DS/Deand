@@ -35,7 +35,7 @@ class Tile
         virtual Inventory GetInventory() const {Inventory inv{0}; return inv;}
         virtual Inventory GetCraftingInventory() const {Inventory inv{0}; return inv;}
         virtual void SetInventory(Inventory i) {}
-        virtual void SetCraftingInventory(Inventory i) {}
+        virtual void SetCraftingInventory(Inventory) {}
         virtual void MoveInvIndex(int) {}
         virtual void MoveCraftingInvIndex(int){}
         virtual bool PutInInv(Item &) {return false;}

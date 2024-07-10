@@ -21,7 +21,6 @@ class Producer: public Tile
         Inventory GetCraftingInventory() const {return crafting_inventory;}
         
         void SetInventory(Inventory i) {inv = i;}
-        void SetCraftingInventory(Inventory i) {crafting_inventory = i;}
         
         void MoveInvIndex(int n) {inv.MoveIndex(n);}
         bool PutInInv(Item & i) {return inv.PutIn(i);}
