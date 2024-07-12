@@ -16,7 +16,7 @@ using namespace std;
 
 const int WIDTH = 49;
 const int HEIGHT = 25;
-const string FILE_PATH = "save/save_file.bin";
+const string FILE_PATH = "save_file.bin";
 
 const string INV_SOUND = "assets/inv_nav.wav";
 const string PLACE_SOUND = "assets/placing.wav";
