@@ -439,6 +439,8 @@ void Display::ShowHelp()
     cout << "- Blocks can be powered once per side";
     gotoxy(x + 3, 18);
     cout << "- Machines can auto-output";
+    gotoxy(x + 3, 18);
+    cout << "- Pipes can only power pipes";
 
     for(int i = 4; i < TEXT_H; i++)
     {

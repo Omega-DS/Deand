@@ -22,8 +22,9 @@ void Pipe::Power(Map & map, Display & display, Coords cen, Coords c)
     color = color_aux;
 
     map.tiles[facing.x][facing.y]->PutInInv(item);
+    inv.SetSlot(item);
         
-    if(!map.GetBlock(facing)->AlreadyPowered(c) && map.InMap(facing))
+    if(!map.GetBlock(facing)->AlreadyPowered(c) && map.InMap(facing) && map.GetBlock(facing)->GetType() == "Logistics")
     {
         map.tiles[facing.x][facing.y]->AddPowered(c);
         map.tiles[facing.x][facing.y]->Power(map, display, cen, facing);
