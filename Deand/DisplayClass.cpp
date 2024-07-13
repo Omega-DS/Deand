@@ -422,7 +422,7 @@ void Display::ShowHelp()
     gotoxy(x + 4, 8);
     cout << "i: Open inventory";
     gotoxy(x + 4, 9);
-    cout << "e: Interactuate with facing block";
+    cout << "e: Interact with facing block";
     gotoxy(x + 4, 10);
     cout << "l: Power facing block";
     gotoxy(x + 4, 11);

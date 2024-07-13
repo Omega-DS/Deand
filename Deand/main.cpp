@@ -645,7 +645,7 @@ void Intro()
     sleep(2);
     Print("You are a humble engineer in 4th Earth, who discovered by accident a project from the elites to start a war over valmite's possesion.");
     gotoxy(x, y + 7);
-    Print("You tried to investigate more. However, all of a suden, you were transfered to 5th Earth, along with your wife and daughter.");
+    Print("You tried to investigate more. However, all of a sudden, you were transfered to 5th Earth, along with your wife and daughter.");
     gotoxy(x, y + 9);
     sleep(3);
     Print("In the middle of your trip, a message arrives to the spaceship communicaton system: ");

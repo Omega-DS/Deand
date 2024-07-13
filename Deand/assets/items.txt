@@ -319,60 +319,60 @@ Drill mk II
 9
 1
 2	11 1 42 5
-Upgraded drill, produces twice
+Upgraded drill, doubles output
 #46
 Shaper mk II
 36
 9
 1
 2	23 1 42 5
-Upgraded shaper, produces twice
+Upgraded shaper, doubles output
 #47
 Rock extractor mk II
 215
 9
 1
 2	24 1 42 5
-Upgraded rock extractor, produces twice
+Upgraded rock extractor, doubles output
 #48
 Pump mk II
 190
 9
 1
 2	30 1 42 5
-Upgraded pump, produces twice
+Upgraded pump, doubles output
 #49
 Bacteria plantation mk II
 21
 9
 1
 2	16 1 42 5
-Upgraded bacteria plantation, produces twice
+Upgraded bacteria plantation, doubles output
 #50
 Biolab mk II
 225
 9
 1
 2	29 1 42 5
-Upgraded biolab, produces twice
+Upgraded biolab, doubles output
 #51
 Furnace mk II
 127
 9
 1
 2	34 1 42 5
-Upgraded furnace, produces twice
+Upgraded furnace, doubles output
 #52
 Dryer mk II
 209
 9
 1
 2	41 1 42 5
-Upgraded dryer, produces twice
+Upgraded dryer, doubles output
 #53
 Electronics lab mk II
 146
 9
 1
 2	40 1 42 5
-Upgraded electronics lab, produces twice
+Upgraded electronics lab, doubles output
