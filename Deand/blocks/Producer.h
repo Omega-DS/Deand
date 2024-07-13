@@ -28,6 +28,8 @@ class Producer: public Tile
         void SetSlot(Item item) {inv.SetSlot(item);}
         void SetColor(int i){color = i;}
         
+        void SetCraftingInventoryInd(int i) {crafting_inventory.SetInd(i);}
+        
         Producer (Block block)
         {
             id = block.GetId();

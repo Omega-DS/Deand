@@ -45,6 +45,7 @@ class Tile
         virtual string GetType() {return type;}
         virtual Coords GetFacing() {return facing;}
         Recipe GetCraftingItems() const {return crafting_items;}
+        virtual void SetCraftingInventoryInd(int ) {};
         
         virtual void CalculateChar() {}
         virtual void CalculateFaces(Map &, Coords, bool) {}

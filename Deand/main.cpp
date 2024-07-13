@@ -509,12 +509,12 @@ void SaveGame(Map & map, Player & player)
                     q = map.tiles[i][j]->GetInventory().GetSlot(k).GetQuant();
                     f.write((char*)&id, sizeof(int));
                     f.write((char*)&q, sizeof(int));
-                    
-                    if(map.tiles[i][j]->GetCraftingInventory().GetSize() > 0)
-                    {
-                        ind = map.tiles[i][j]->GetCraftingInventory().GetInd();
-                        f.write((char*)&ind, sizeof(int));
-                    }
+                }
+                
+                if(map.tiles[i][j]->GetType() == "Production" || map.tiles[i][j]->GetType() == "Crafting")
+                {
+                    ind = map.tiles[i][j]->GetCraftingInventory().GetInd();
+                    f.write((char*)&ind, sizeof(int));
                 }
             }
     }
@@ -620,16 +620,13 @@ void LoadGame(Map & map, Player & player)
                     item.SetQuant(q);
                     if(id != 0)
                         map.tiles[i][j]->PutInInv(item);
-                    if(map.tiles[i][j]->GetCraftingInventory().GetSize() > 0)
-                    {
-                        f.read((char*)&ind, sizeof(int));
-                        map.tiles[i][j]->GetCraftingInventory().SetInd(ind);
-                    }
+                }
+                if(map.tiles[i][j]->GetType() == "Production" || map.tiles[i][j]->GetType() == "Crafting")
+                {
+                    f.read((char*)&ind, sizeof(int));
+                    map.tiles[i][j]->SetCraftingInventoryInd(ind);
                 }
             }
-            
-        //Map map_aux;
-        //map = map_aux;
     }
     
     f.close();
