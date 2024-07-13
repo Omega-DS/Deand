@@ -419,7 +419,7 @@ bool InvLoop(Display & display, Player & player, Inventory & craft_inv, bool & c
                     if (item_a.GetId() == 43)
                         win = true;
                 }
-                
+                display.UpdateInv(player);
                 break;
             case '\t':
                 Play(INV_SOUND);
@@ -476,7 +476,7 @@ void SaveGame(Map & map, Player & player)
 {
     ofstream f;
     Coords c = player.GetCoords();
-    int id, q;
+    int id, q, ind;
     
     f.open(FILE_PATH, ios::binary);
     
@@ -509,6 +509,12 @@ void SaveGame(Map & map, Player & player)
                     q = map.tiles[i][j]->GetInventory().GetSlot(k).GetQuant();
                     f.write((char*)&id, sizeof(int));
                     f.write((char*)&q, sizeof(int));
+                    
+                    if(map.tiles[i][j]->GetCraftingInventory().GetSize() > 0)
+                    {
+                        ind = map.tiles[i][j]->GetCraftingInventory().GetInd();
+                        f.write((char*)&ind, sizeof(int));
+                    }
                 }
             }
     }
@@ -522,7 +528,7 @@ void LoadGame(Map & map, Player & player)
     DataBase data_base;
     Coords c;
     Block block;
-    int id, q;
+    int id, q, ind;
     Item item;
     
     f.open(FILE_PATH, ios::binary);
@@ -614,6 +620,11 @@ void LoadGame(Map & map, Player & player)
                     item.SetQuant(q);
                     if(id != 0)
                         map.tiles[i][j]->PutInInv(item);
+                    if(map.tiles[i][j]->GetCraftingInventory().GetSize() > 0)
+                    {
+                        f.read((char*)&ind, sizeof(int));
+                        map.tiles[i][j]->GetCraftingInventory().SetInd(ind);
+                    }
                 }
             }
             

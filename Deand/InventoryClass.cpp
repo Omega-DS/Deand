@@ -142,33 +142,15 @@ bool Inventory::PutIn(Item & item)
     return placed_all;
 }
 
-/*
-bool Recipe::RecipeCheck(Inventory inv)
+int Inventory::GetInd()
 {
-    int pos = -1,
-        q, quant = 0,
-        start = 0;
-    unsigned int i = 0;
-    bool ok = true;
-    
-    while(i < ingredients.size() && ok)
-    {
-        while(quant < ingredients[i].quant 
-            && inv.SearchItem(ingredients[i].id, pos, q, start))
-        {
-            start = pos + 1;
-            quant += q;
-        }
-        
-        if (quant < ingredients[i].quant)
-            ok = false;
-        
-        i += 2;
-    }
-    
-    return ok;    
+    return ind;
 }
-*/
+
+void Inventory::SetInd(int i)
+{
+    ind = i;
+}
 
 
 bool Inventory::RecipeCheck(Recipe rec)

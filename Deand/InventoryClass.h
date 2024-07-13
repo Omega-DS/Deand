@@ -11,6 +11,8 @@ class Inventory
         Inventory();
         Inventory(int);
         Inventory(Recipe);
+        int GetInd();
+        void SetInd(int);
         int GetSize() const;
         Item GetSlot(int i = -1);
         void SetSlot(Item, int i = -1);

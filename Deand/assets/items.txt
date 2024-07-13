@@ -262,7 +262,7 @@ Battery
 175
 13
 0
-2	35 1 14 2
+2	36 1 14 2
 Used in electronics to store energy
 #38
 Chest
