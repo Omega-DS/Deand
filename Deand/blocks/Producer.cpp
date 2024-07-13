@@ -17,7 +17,7 @@ void Producer::Power(Map & map, Display & display, Coords cen, Coords c)
     
     color = 11;
     display.UpdateMap(map, cen);
-    Sleep(100);
+    Sleep(65);
     color = color_aux;
     
     if(type == "Crafting")

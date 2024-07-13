@@ -18,7 +18,7 @@ void Chest::Power(Map & map, Display & display, Coords cen, Coords c)
     
     color = 11;
     display.UpdateMap(map, cen);
-    Sleep(200);
+    Sleep(65);
     color = color_aux;
     
     while (i < INV_SIZE && inv.GetSlot(i).GetId() == 0)

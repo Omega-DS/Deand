@@ -16,7 +16,7 @@ void Bouncer::Power(Map & map, Display & display, Coords cen, Coords c)
     
     color = 11;
     display.UpdateMap(map, cen);
-    Sleep(100);
+    Sleep(65);
     
     for(int i = 1; i > -2; i -= 2)
     {

@@ -18,7 +18,7 @@ void Pipe::Power(Map & map, Display & display, Coords cen, Coords c)
     
     color = 11;
     display.UpdateMap(map, cen);
-    Sleep(50);
+    Sleep(20);
     color = color_aux;
 
     map.tiles[facing.x][facing.y]->PutInInv(item);
