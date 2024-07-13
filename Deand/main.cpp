@@ -122,7 +122,7 @@ void MainLoop(Player player, bool & load)
     
     while(!win)
     {
-        gotoxy(0, 0);
+        gotoxy(WIDTH/2 + player.GetFacingUnary().x, HEIGHT/2 + player.GetFacingUnary().y);
         while(kbhit()) getch();         // Clear buffer
         opt = getch();
         
@@ -285,7 +285,8 @@ bool interactedLoop(Display & display, Player & player, Map & map, Coords coords
     Item item;
     display.DrawBlockInfo(map, coords);
     
-    gotoxy(0, 0);
+    
+    gotoxy(WIDTH/2 + player.GetFacingUnary().x, HEIGHT/2 + player.GetFacingUnary().y);
     while(kbhit()) getch();         // Clear buffer
     opt = getch();
     opt = tolower(opt);
@@ -364,7 +365,7 @@ bool InvLoop(Display & display, Player & player, Inventory & craft_inv, bool & c
         display.DrawItemInfo(craft_inv.GetSlot());
     display.UpdateCrafting(craft_inv);
     
-    gotoxy(0, 0);
+    gotoxy(WIDTH/2 + player.GetFacingUnary().x, HEIGHT/2 + player.GetFacingUnary().y);
     while(kbhit()) getch();         // Clear buffer
     opt = getch();
     opt = tolower(opt); 
@@ -436,7 +437,7 @@ bool PauseLoop(Display & display, Map & map, Player & player)
     
     display.ShowPauseMenu();
 
-    gotoxy(0, 0);
+    gotoxy(WIDTH/2 + player.GetFacingUnary().x, HEIGHT/2 + player.GetFacingUnary().y);
     while(kbhit()) getch();         // Clear buffer
     opt = getch();
     opt = tolower(opt);

@@ -9,6 +9,7 @@ class Player
         Player();
         Coords GetCoords() const;
         Coords GetFacing() const;
+        Coords GetFacingUnary() const;
         char GetChar() const;
         void SetCoords(Coords);
         bool Move(const Map &);

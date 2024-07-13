@@ -30,6 +30,10 @@ Coords Player::GetFacing() const
     return c;
 }
 
+Coords Player::GetFacingUnary() const
+{
+    return facing;
+}
 char Player::GetChar() const
 {
     return ch;
