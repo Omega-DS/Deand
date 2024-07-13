@@ -109,7 +109,7 @@ Tin pipe
 8
 1
 2	13 1 14 1
-Pipe used for transporting items. Can power facing blocks except storages
+Pipe used for transporting items. Can power facing pipes and bouncers
 #16
 Bacteria plantation mk I
 21
